@@ -42,29 +42,29 @@ Global settings
 	def initialize(pWins,pFails,pScore,pFaults,pOutsides,pPasses,pLocks,pInterceptions,pEntries,
 	pAveragePosession,pGoalsPerGame,pTotalGoals,pPassAccuracy,pShotsPerGame,sTacklesPerGame,
 	pDribblesPerGame,pDiscipline,pYellowCards,pRedCards,pGamesPlayed,pTournamentsPlayed,pName,pPlayers)
-		@wins			=	pWins									
-		@fails		= 	pFails								
-		@score		=	pScore								
-		@faults		=	pFaults								
-		@outsides	= 	pOutsides							
-		@passes		=	pPasses								
-		@locks		=	pLocks								
-		@interceptions	=	pInterceptions					
-		@entries		=	pEntries								
-		@averagePosession	=	pAveragePosession			#calculated
-		@goalsPerGame	=	pGoalsPerGame					#calculated
-		@totalGoals	=	pTotalGoals							
-		@passAccuracy	=	pPassAccuracy					#calculated
-		@shotsPerGame	=	pShotsPerGame					#calculated
-		@tacklesPerGame	=	pTacklesPerGame			#calculated
-		@dribblesPerGame	=	pDribblesPerGame			#calculated
-		@discipline	=	pDiscipline							#calculated
-		@yellowCards	=	pYellowCards					
-		@redCards	=	pRedCards							
-		@gamesPlayed	=	pGamesPlayed					
+		@wins					=	pWins									
+		@fails				= 	pFails								
+		@score				=	pScore								
+		@faults				=	pFaults								
+		@outsides			= 	pOutsides							
+		@passes				=	pPasses								
+		@locks				=	pLocks								
+		@interceptions		=	pInterceptions					
+		@entries				=	pEntries								
+		@averagePosession	=	pAveragePosession				#calculated
+		@goalsPerGame		=	pGoalsPerGame					#calculated
+		@totalGoals			=	pTotalGoals							
+		@passAccuracy		=	pPassAccuracy					#calculated
+		@shotsPerGame		=	pShotsPerGame					#calculated
+		@tacklesPerGame	=	pTacklesPerGame				#calculated
+		@dribblesPerGame	=	pDribblesPerGame				#calculated
+		@discipline			=	pDiscipline						#calculated
+		@yellowCards		=	pYellowCards					
+		@redCards			=	pRedCards							
+		@gamesPlayed		=	pGamesPlayed					
 		@tournamentsPlayed	=	pTournamentsPlayed	
-		@name			=	pName
-		@players		= 	pPlayers
+		@name					=	pName
+		@players				= 	pPlayers
 	end
 	
 	def initialize(pName,pPlayers)
