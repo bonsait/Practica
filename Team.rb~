@@ -78,78 +78,97 @@ private
 	
 
 	def name=(pName)
-		@name 	= 	pName
+		@name 					= 		pName
 	end
 	
 	def Setplayers=(pPlayers)
-		@players = 	pPlayers
+		@players 				= 		pPlayers
 	end	
 	
 	
 	def IncreaseWins(pWins = 1)
-		@wins 	+= 	pWins
+		@wins 					+= 	pWins
 	end
 	
 	def Increasefails(pFails = 1)
-		@fails 	+= 	pFails
+		@fails 					+= 	pFails
 	end
 	
 	def IncreaseScore(pScore = 1)
-		@score 	+= 	pScore						#calculated
+		@score 					+= 	pScore						#calculated
 	end
 	
 	def IncreaseFaults(pFaults = 1)
-		@faults		+=		pFaults
+		@faults					+=		pFaults
 	end
 	
 	def IncreaseOutsides(pOutsides = 1)
-		@outsides	+=		pOutsides
+		@outsides				+=		pOutsides
 	end
 	
 	def IncreasePasses(pPasses = 1)
-		@passes		+=		pPasses
+		@passes					+=		pPasses
 	end
 	
 	def IncreaseLocks(pLocks = 1)
-		@locks		+=		pLocks
+		@locks					+=		pLocks
 	end
 	
 	def IncreaseInterceptions(pInterceptions = 1)
-		@interceptions		+=		pInterceptions
+		@interceptions			+=		pInterceptions
 	end
 	
 	def IncreaseEntries(pEntries)
-		@entries		+=		pEntries
+		@entries					+=		pEntries
 	end
 	
 	def calculateAveragePosession(pAveragePosession)	#calculated
-		@averagePosession		=  pAveragePosession
+		@averagePosession		+=  	pAveragePosession
 		
 	def increaseGoalsPerGame(pGoalsPerGame)				#calculated
-		@goalsPerGame		+=		pGoalsPerGame
+		@goalsPerGame			+=		pGoalsPerGame
 	end
 	
 	def totalGoals(pTotalGoals)
-		@totalGoals		+=		pTotalGoals
+		@totalGoals				+=		pTotalGoals
 	end
 	
 	def calculatePassAccuracy(pPassAccuracy)				#calculated
-		@passAccuracy		+=		pPassAccuracy
+		@passAccuracy			+=		pPassAccuracy
 	end
 	
-	def calculateShotsPerGame(pShotsPerGame)
-		@shotsPerGame		+=		pShotsPerGame
+	def calculateShotsPerGame(pShotsPerGame)				#calculated
+		@shotsPerGame			+=		pShotsPerGame
 	end
 	
-	def calculateTacklesPerGame(pTacklesPerGame)
+	def calculateTacklesPerGame(pTacklesPerGame)			#calculated
 		@tacklesPerGame		+=		pTacklesPerGame
 	end
 	
-	def calculateDribblesPerGame(pDribblesPerGame)
+	def calculateDribblesPerGame(pDribblesPerGame)		#calculated
+		@dribblesPerGame = pDribblesPerGame
 	end
 	
-		
-		
+	def calculateDiscipline()									#calculated
+			
+	end
+	
+	def increaseYellowCards(pYellowCards)
+		@yellowCards 			+=		pYellowCards			
+	end
+	
+	def increaseRedCards(pRedCards)
+		@redCards 				+=		pRedCards			
+	end
+	
+	def increaseGamesPlayed(pGamesPlayed)
+		@gamesPlayed			+= 	pGamesPlayed
+	end
+	
+	def increaseTournamentsPlayed(pTournamentsPlayed)
+						
+		@tournamentsPlayed	+=	pTournamentsPlayed	
+	end
 	
 	def addPlayer(pPlayer)
 	end
