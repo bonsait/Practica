@@ -1,0 +1,17 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    football_data (1.0.0)
+    shoes (3.0.1)
+    shoes_date_picker (1.0.0)
+
+PLATFORMS
+  java
+
+DEPENDENCIES
+  football_data
+  shoes
+  shoes_date_picker
+
+BUNDLED WITH
+   1.12.5

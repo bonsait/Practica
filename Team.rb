@@ -2,15 +2,19 @@
 
 
 =end
-class Team
+
+class Team  
+
 =begin
 Global settings
 @@gainedPoints 	: amount of points gained 
 =end
+ 
 @@scoreValue = 10
-
+@dateCreated
+@players 
 @wins = 0
-@fails = 0
+@loses = 0
 @score = 0
 @faults = 0
 @outsides = 0
@@ -34,42 +38,16 @@ Global settings
 
 #Access Attributes
 
-	attr_writer :name #,attrib2,attrib3,...
-	attr_reader :name #,attrib2,attrib3,...
+	attr_writer :name, :dateCreated #,attrib2,attrib3,...
+	attr_reader :name, :dateCreated #,attrib2,attrib3,...
 	
 # initial method
-
-	def initialize(pWins,pFails,pScore,pFaults,pOutsides,pPasses,pLocks,pInterceptions,pEntries,
-	pAveragePosession,pGoalsPerGame,pTotalGoals,pPassAccuracy,pShotsPerGame,sTacklesPerGame,
-	pDribblesPerGame,pDiscipline,pYellowCards,pRedCards,pGamesPlayed,pTournamentsPlayed,pName,pPlayers)
-		@wins					=	pWins									
-		@fails				= 	pFails								
-		@score				=	pScore								
-		@faults				=	pFaults								
-		@outsides			= 	pOutsides							
-		@passes				=	pPasses								
-		@locks				=	pLocks								
-		@interceptions		=	pInterceptions					
-		@entries				=	pEntries								
-		@averagePosession	=	pAveragePosession				#calculated
-		@goalsPerGame		=	pGoalsPerGame					#calculated
-		@totalGoals			=	pTotalGoals							
-		@passAccuracy		=	pPassAccuracy					#calculated
-		@shotsPerGame		=	pShotsPerGame					#calculated
-		@tacklesPerGame	=	pTacklesPerGame				#calculated
-		@dribblesPerGame	=	pDribblesPerGame				#calculated
-		@discipline			=	pDiscipline						#calculated
-		@yellowCards		=	pYellowCards					
-		@redCards			=	pRedCards							
-		@gamesPlayed		=	pGamesPlayed					
-		@tournamentsPlayed	=	pTournamentsPlayed	
-		@name					=	pName
-		@players				= 	pPlayers
-	end
 	
-	def initialize(pName,pPlayers)
-	@name 	=	pName
-	@players	=	pPlayers
+	def initialize(pName,pDateCreated)
+		@name 				=			pName
+		
+		@dateCreated		=			pDateCreated
+		
 	end
 	
 # methods
@@ -86,46 +64,47 @@ private
 	end	
 	
 	
-	def IncreaseWins(pWins = 1)
+	def increaseWins(pWins = 1)
 		@wins 					+= 	pWins
 	end
 	
-	def Increasefails(pFails = 1)
-		@fails 					+= 	pFails
+	def increaseLoses(pLose = 1)
+		@loses 					+= 	pLoses
 	end
 	
-	def IncreaseScore(pScore = 1)
+	def increaseScore(pScore = 1)
 		@score 					+= 	pScore						#calculated
 	end
 	
-	def IncreaseFaults(pFaults = 1)
+	def calculatedFaults(pFaults = 1)
 		@faults					+=		pFaults
 	end
 	
-	def IncreaseOutsides(pOutsides = 1)
+	def increaseOutsides(pOutsides = 1)
 		@outsides				+=		pOutsides
 	end
 	
-	def IncreasePasses(pPasses = 1)
+	def increasePasses(pPasses = 1)
 		@passes					+=		pPasses
 	end
 	
-	def IncreaseLocks(pLocks = 1)
+	def increaseLocks(pLocks = 1)
 		@locks					+=		pLocks
 	end
 	
-	def IncreaseInterceptions(pInterceptions = 1)
+	def increaseInterceptions(pInterceptions = 1)
 		@interceptions			+=		pInterceptions
 	end
 	
-	def IncreaseEntries(pEntries)
+	def increaseEntries(pEntries)
 		@entries					+=		pEntries
 	end
 	
-	def calculateAveragePosession(pAveragePosession)	#calculated
+	def calculateAveragePosession(pAveragePosession)	      #calculated
 		@averagePosession		+=  	pAveragePosession
+	end
 		
-	def increaseGoalsPerGame(pGoalsPerGame)				#calculated
+	def increaseGoalsPerGame(pGoalsPerGame)				   #calculated
 		@goalsPerGame			+=		pGoalsPerGame
 	end
 	
@@ -133,11 +112,11 @@ private
 		@totalGoals				+=		pTotalGoals
 	end
 	
-	def calculatePassAccuracy(pPassAccuracy)				#calculated
+	def calculatePassAccuracy(pPassAccuracy)				 #calculated
 		@passAccuracy			+=		pPassAccuracy
 	end
 	
-	def calculateShotsPerGame(pShotsPerGame)				#calculated
+	def calculateShotsPerGame(pShotsPerGame)				 #calculated
 		@shotsPerGame			+=		pShotsPerGame
 	end
 	
@@ -149,36 +128,103 @@ private
 		@dribblesPerGame = pDribblesPerGame
 	end
 	
-	def calculateDiscipline()									#calculated
+	def calculateDiscipline()							    #calculated
 			
 	end
 	
-	def increaseYellowCards(pYellowCards)
-		@yellowCards 			+=		pYellowCards			
+	def increaseYellowCards(pYellowCards = 1)
+		@yellowCards 		     +=    pYellowCards			
 	end
 	
-	def increaseRedCards(pRedCards)
-		@redCards 				+=		pRedCards			
+	def increaseRedCards(pRedCards = 1)
+		@redCards 				   +=	   pRedCards			
 	end
 	
-	def increaseGamesPlayed(pGamesPlayed)
-		@gamesPlayed			+= 	pGamesPlayed
+	def increaseGamesPlayed(pGamesPlayed = 1)
+		@gamesPlayed			   += 	 pGamesPlayed
 	end
 	
-	def increaseTournamentsPlayed(pTournamentsPlayed)
-						
-		@tournamentsPlayed	+=	pTournamentsPlayed	
+	def increaseTournamentsPlayed(pTournamentsPlayed = 1)						
+		@tournamentsPlayed	       +=	 pTournamentsPlayed	
 	end
 	
-	def addPlayer(pPlayer)
-	end
 	
-	def deletePlayer(pPlayer)
+	
+	
+	
+
+    
+public
+    
+   	def deletePlayer(pPlayer)
+        if (pPlayer.nil?)
+	       puts "Can not delete Player. Player is null"
+        elsif (@players.nil?)
+            puts "Can not delete Player. Team has no players"
+        elsif (!@players.include?(pPlayer))
+            puts "Can not delete Player. Player is not included"
+        else
+            @players.delete(pPlayer)
+            puts "Player deleted successfuly"
+        end
+        
 	end	
+    
+    def showPlayers()
+        if !(@players.empty? | @players.nil?)
+            @players.each{
+                |p| print p," "
+                }
+            puts 
+        else
+            puts "Team has no players"
+        end
+	end
+    
+    def addPlayer(pPlayer)
+       
+        
+        if (pPlayer.nil?)
+	       puts "Can not add Player. Player is null"
+        elsif (@players.nil?)
+            @players = Array.new(1,pPlayer)
+        elsif (@players.include?(pPlayer))
+            puts "Can not add Player. Player is already included"
+        else
+            @players << pPlayer
+            
+        end
+        
+        
+	end
 	
 	
 end
 
-aTeam = Team.new("Team A",["a","b","c"])
-print("Team name : #@name",aTeam.name)
-print("\n")	
+
+a = Team.new("Equipo A","06/06/94")
+a.addPlayer(5)
+a.addPlayer(5)
+a.addPlayer(4)
+a.addPlayer(4)
+a.addPlayer(3)
+a.addPlayer(2)
+a.addPlayer(1)
+
+a.showPlayers()
+
+a.deletePlayer(5)
+a.deletePlayer(5)
+a.deletePlayer(4)
+a.deletePlayer(4)
+a.deletePlayer(3)
+a.deletePlayer(2)
+a.deletePlayer(1)
+a.deletePlayer(0)
+
+a.showPlayers()
+
+
+
+
+
